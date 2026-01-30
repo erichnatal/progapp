@@ -1,0 +1,83 @@
+.geral {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quadrado {
+    background-color: green;
+    width: 500px;
+    height: 500px;
+}
+
+.quadrado .quad1 {
+    width: 100%; 
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadrado .quad2 {
+    width: 100%; 
+    height: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.quadrado .quad3 {
+    width: 100%; 
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.quadrado .quad4 {
+    width: 100%; 
+    height: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+
+.olhoesquerdo {
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    margin-top: 150px;
+
+}
+
+.olhodireito {
+    background-color: black;
+    width: 150px;
+    height: 150px;
+    margin-left: 100px;
+    margin-top: 150px;
+}
+
+.nariz {
+    background-color: black;
+    width: 100px;
+    height: 100px;
+    margin-top: 65px;
+}
+
+.boca {
+    background-color: black;
+    width: 350px;
+    height: 150px;
+}
+
+.quad4 {
+    display: flex;
+    justify-items:center;
+    align-items: flex-start;
+}
+
+.dentes {
+    background-color: black;
+    width: 100px;
+    height: 40px;
+    
+}
