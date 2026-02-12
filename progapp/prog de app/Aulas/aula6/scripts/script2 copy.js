@@ -15,27 +15,13 @@ function addLista() {
 }
 
 function removeLista() {
-    var itens = lista.children;
-    var imagem = document.getElementById("spinImg");
+    var checkboxes = lista.querySelectorAll("input[type='checkbox']")
 
-    var removeu = false;
-
-    for (var i = itens.length - 1; i >= 0; i--) {
-        var checkbox = itens[i].querySelector("input");
-
-        if (checkbox.checked) {
-            lista.removeChild(itens[i]);
-            removeu = true;
+    checkboxes.forEach(function(checkbox) {
+        if (checkbox.checked){
+            lista.removeChild(checkbox.parentElement)
         }
-    }
-
-    if (removeu) {
-        imagem.classList.add("girando");
-
-        setTimeout(function() {
-            imagem.classList.remove("girando");
-        }, 2000); // gira por 2 segundos
-    }
+    })
 }
 
 botaoAdd.addEventListener("click", addLista)
