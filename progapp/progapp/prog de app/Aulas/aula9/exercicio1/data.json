@@ -1,0 +1,19 @@
+{
+    "vehicles": [
+      { "id": 1, "brand": "Toyota", "model": "Corolla", "year": 2023, "category": "Sedan", "fuel": "Flex", "horsepower": 177, "weight_kg": 1390, "city_km_l": 11.5, "price_brl": 148990 },
+      { "id": 2, "brand": "Honda", "model": "Civic", "year": 2008, "category": "Sedan", "fuel": "Gasoline", "horsepower": 190, "weight_kg": 1340, "city_km_l": 12.4, "price_brl": 80990 },
+      { "id": 3, "brand": "Volkswagen", "model": "T-Cross", "year": 2024, "category": "SUV", "fuel": "Flex", "horsepower": 150, "weight_kg": 1320, "city_km_l": 10.2, "price_brl": 139990 },
+      { "id": 4, "brand": "Hyundai", "model": "Creta", "year": 2024, "category": "SUV", "fuel": "Flex", "horsepower": 167, "weight_kg": 1350, "city_km_l": 9.8, "price_brl": 145990 },
+      { "id": 5, "brand": "Chevrolet", "model": "Onix", "year": 2014, "category": "Hatch", "fuel": "Flex", "horsepower": 116, "weight_kg": 1034, "city_km_l": 13.3, "price_brl": 89990 },
+      { "id": 6, "brand": "Fiat", "model": "Pulse", "year": 2024, "category": "SUV", "fuel": "Flex", "horsepower": 130, "weight_kg": 1220, "city_km_l": 12.0, "price_brl": 98990 },
+      { "id": 7, "brand": "Jeep", "model": "Compass", "year": 2023, "category": "SUV", "fuel": "Diesel", "horsepower": 170, "weight_kg": 1625, "city_km_l": 10.1, "price_brl": 189990 },
+      { "id": 8, "brand": "Ford", "model": "Fiesta", "year": 2015, "category": "Hatch", "fuel": "Flex", "horsepower": 115, "weight_kg": 1100, "city_km_l": 8.9, "price_brl": 45000 },
+      { "id": 9, "brand": "Nissan", "model": "Kicks", "year": 2023, "category": "SUV", "fuel": "Flex", "horsepower": 113, "weight_kg": 1142, "city_km_l": 11.4, "price_brl": 117990 },
+      { "id": 10, "brand": "Renault", "model": "Kwid", "year": 2023, "category": "Hatch", "fuel": "Flex", "horsepower": 71, "weight_kg": 818, "city_km_l": 15.3, "price_brl": 68990 },
+      { "id": 11, "brand": "BYD", "model": "Dolphin", "year": 2024, "category": "Hatch", "fuel": "Electric", "horsepower": 95, "weight_kg": 1658, "city_km_l": null, "price_brl": 149800 },
+      { "id": 12, "brand": "Tesla", "model": "Model 3", "year": 2023, "category": "Sedan", "fuel": "Electric", "horsepower": 283, "weight_kg": 1765, "city_km_l": null, "price_brl": 329990 },
+      { "id": 13, "brand": "BMW", "model": "320i", "year": 2023, "category": "Sedan Premium", "fuel": "Gasoline", "horsepower": 184, "weight_kg": 1470, "city_km_l": 10.5, "price_brl": 289990 },
+      { "id": 14, "brand": "Mercedes-Benz", "model": "A200", "year": 2023, "category": "Hatch Premium", "fuel": "Gasoline", "horsepower": 163, "weight_kg": 1410, "city_km_l": 11.0, "price_brl": 269990 },
+      { "id": 15, "brand": "Peugeot", "model": "208", "year": 2024, "category": "Hatch", "fuel": "Flex", "horsepower": 130, "weight_kg": 1140, "city_km_l": 13.0, "price_brl": 99990 }
+    ]
+  }
