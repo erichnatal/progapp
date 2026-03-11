@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    background-color: aqua;
+}
+
+.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.lista {
+    display: flex;
+    justify-content: center;
+}
+
+#spinImg {
+    position: fixed;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+@keyframes girar {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.girando {
+    display: block !important;
+    animation: girar 1s linear infinite;
+}
