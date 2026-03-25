@@ -1,0 +1,52 @@
+.linha { 
+    display: flex;
+    width: 100%
+}
+
+.retAqua {
+    background-color: aqua;
+    width: 50%;
+    height: 33vh; 
+    display:flex; 
+    align-items: center
+}
+
+.retAmarelo {
+    background-color: yellow; 
+    width: 50%; 
+    height: 33vh; 
+    display: flex; 
+    justify-content: flex-end; 
+    align-items: center
+}
+
+.quadAmarelo {
+    background-color: yellow; 
+    width: 50px; 
+    height: 50px
+}
+
+.quadAqua {
+    background-color: aqua; 
+    width: 50px; 
+    height: 50px
+}
+
+.retBranco {
+    background-color: white; 
+    width: 100%; 
+    height: 33vh; 
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center
+}
+
+.retAquaGrande {
+    background-color: aqua; 
+    width: 100%; 
+    height: 33vh; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center
+}

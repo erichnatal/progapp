@@ -1,0 +1,30 @@
+[
+    { "nome": "Notebook", "categoria": "Eletronico", "preco": 3500, "quantidade": 3 },
+    { "nome": "Mouse", "categoria": "Eletronico", "preco": 80, "quantidade": 15 },
+    { "nome": "Teclado", "categoria": "Eletronico", "preco": 150, "quantidade": 10 },
+    { "nome": "Monitor", "categoria": "Eletronico", "preco": 900, "quantidade": 4 },
+    { "nome": "Headset", "categoria": "Eletronico", "preco": 200, "quantidade": 8 },
+  
+    { "nome": "Cadeira", "categoria": "Movel", "preco": 900, "quantidade": 5 },
+    { "nome": "Mesa", "categoria": "Movel", "preco": 1200, "quantidade": 2 },
+    { "nome": "Armario", "categoria": "Movel", "preco": 1500, "quantidade": 1 },
+  
+    { "nome": "Caderno", "categoria": "Papelaria", "preco": 25, "quantidade": 40 },
+    { "nome": "Caneta", "categoria": "Papelaria", "preco": 5, "quantidade": 100 },
+    { "nome": "Lapis", "categoria": "Papelaria", "preco": 3, "quantidade": 80 },
+  
+    { "nome": "Livro JS", "categoria": "Educacao", "preco": 120, "quantidade": 12 },
+    { "nome": "Livro CSS", "categoria": "Educacao", "preco": 90, "quantidade": 7 },
+  
+    { "nome": "Tablet", "categoria": "Eletronico", "preco": 2200, "quantidade": 6 },
+    { "nome": "Impressora", "categoria": "Eletronico", "preco": 700, "quantidade": 3 },
+  
+    { "nome": "Sofa", "categoria": "Movel", "preco": 2500, "quantidade": 1 },
+    { "nome": "Estante", "categoria": "Movel", "preco": 800, "quantidade": 4 },
+  
+    { "nome": "Agenda", "categoria": "Papelaria", "preco": 30, "quantidade": 25 },
+    { "nome": "Marca Texto", "categoria": "Papelaria", "preco": 8, "quantidade": 60 },
+  
+    { "nome": "Curso JS", "categoria": "Educacao", "preco": 300, "quantidade": 5 }
+  ]
+  
