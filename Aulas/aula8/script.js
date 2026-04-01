@@ -11,3 +11,5 @@ const pais = pessoa.map((p) => {
 })
 
 console.log(pais)
+
+const completo = 
