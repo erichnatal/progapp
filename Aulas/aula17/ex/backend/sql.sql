@@ -1,0 +1,12 @@
+DROP DATABASE aprendizes;
+CREATE DATABASE aprendizes;
+USE aprendizes;
+CREATE TABLE aprendiz(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(60) NOT NULL,
+setor VARCHAR(60) NOT NULL,
+idade INT(3) NOT NULL
+);
+
+
+
