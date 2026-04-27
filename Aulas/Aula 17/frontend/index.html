@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD - ANALISE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="body">
+    <div class="form1">
+        <h1>Adicionar Usuarios</h1>   
+        <form id="form">
+            <input type="text" placeholder="Nome do usuario" id="nome">
+            <input type="email" placeholder="Email do usuario" id="email">
+            <input type="password" placeholder="Senha" id="senha">
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="form2">
+        <h1>Atualizar Usuario</h1>
+        <form id="formatt">
+            <input type="text" id="idatt" placeholder="ID do Usuario" disabled>
+            <input type="text" placeholder="Nome do usuario" id="nomeatt">
+            <input type="email" placeholder="Email do usuario" id="emailatt">
+            <input type="password" placeholder="Senha" id="senhaatt">
+            <button type="submit">Atualizar</button>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="tab">
+        <h2>Usuários</h2>
+        <table border="1" class="tabela">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody id="listaUsuarios">
+                <!-- O conteúdo da tabela virá aqui: Nome, email  -->
+            </tbody>
+        </table>
+    </div>
+    <script src="scripts/index.js"></script>
+</body>
+</html>
