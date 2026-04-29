@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard CRUD</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    input {
+      padding: 8px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 12px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .btn-add { background: #4CAF50; color: white; }
+    .btn-delete { background: #e74c3c; color: white; }
+    .btn-edit { background: #f39c12; color: white; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Dashboard de Usuários</h1>
+
+    <div class="card">
+      <h3>Cadastrar usuário</h3>
+      <input type="text" id="name" placeholder="Nome">
+      <input type="email" id="email" placeholder="Email">
+      <button class="btn-add" onclick="createUser()">Adicionar</button>
+    </div>
+
+    <div class="card">
+      <h3>Lista de usuários</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const API = 'http://localhost:3000/users';
+
+    async function loadUsers() {
+      const res = await fetch(API);
+      const users = await res.json();
+
+      const tbody = document.getElementById('table-body');
+      tbody.innerHTML = '';
+
+      users.forEach(user => {
+        tbody.innerHTML += `
+          <tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+            <td>${user.email}</td>
+            <td>
+              <button class="btn-edit" onclick="editUser(${user.id}, '${user.name}', '${user.email}')">Editar</button>
+              <button class="btn-delete" onclick="deleteUser(${user.id})">Excluir</button>
+            </td>
+          </tr>
+        `;
+      });
+    }
+
+    async function createUser() {
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+
+      await fetch(API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+
+      loadUsers();
+    }
+
+    async function deleteUser(id) {
+      await fetch(`${API}/${id}`, {
+        method: 'DELETE'
+      });
+
+      loadUsers();
+    }
+
+    async function editUser(id, currentName, currentEmail) {
+      const name = prompt('Novo nome:', currentName);
+      const email = prompt('Novo email:', currentEmail);
+
+      if (!name || !email) return;
+
+      await fetch(`${API}/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email })
+      });
+
+      loadUsers();
+    }
+
+    loadUsers();
+  </script>
+</body>
+</html>
