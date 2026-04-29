@@ -49,11 +49,18 @@ app.get('/vendas/:id', (req, res) => {
 
 app.post('/registro', (req, res) => {
     const { nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor } = req.body
-    connection.query("INSERT INTO venda (nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor) VALUES (?,?,?,?,?,?,?)",
-        [nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor]
-    )
 
-    return res.status(201).send({ response: "Venda registrada com sucesso!"})
+    connection.query(
+        "INSERT INTO venda (nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor) VALUES (?,?,?,?,?,?,?)",
+        [nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor],
+        (err, results) => {
+            if (err) {
+                console.error(err)
+                return res.status(500).send({ error: "Erro ao registrar venda" })
+            }
+            return res.status(201).send({ response: "Venda registrada com sucesso!" })
+        }
+    )
 })
 
 app.delete('/deletar/:id', (req, res) => {
@@ -67,18 +74,21 @@ app.delete('/deletar/:id', (req, res) => {
     }
 })
 
-app.put('/atualizar/:id', (req,res) => {
+app.put('/atualizar/:id', (req, res) => {
     const { id } = req.params
-    const { nomeProduto, categoria, qtdVenda, precoUnitario, dataVenda, tipoPagamento, nomeVendedor } = req.body
-    try {
-        connection.query("UPDATE venda SET nome_produto=?, categoria=?, quantidade_vendida=?, valor_produto=?, data_venda=?, forma_pagamento=?, nome_vendedor=? WHERE id=?",
-            [nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor, id]
-)
-        return res.status(200).send({ message: "Venda atualizada com sucesso!"})
-    }
-    catch{
-        return res.status(500).send({ error: "Ocorreu um erro ao atualizar"})
-    }
+    const { nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor } = req.body
+
+    connection.query(
+        "UPDATE venda SET nome_produto=?, categoria=?, quantidade_vendida=?, valor_produto=?, data_venda=?, forma_pagamento=?, nome_vendedor=? WHERE id=?",
+        [nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor, id],
+        (err, results) => {
+            if (err) {
+                console.error(err)
+                return res.status(500).send({ error: "Erro ao atualizar venda" })
+            }
+            return res.status(200).send({ message: "Venda atualizada com sucesso!" })
+        }
+    )
 })
 
 app.listen(port, () => {

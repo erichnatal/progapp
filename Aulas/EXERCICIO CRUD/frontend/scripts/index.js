@@ -36,15 +36,14 @@ form.addEventListener('submit', async (e) => {
 })
 
 function atualizarUsuario(id, nome_produto, categoria, quantidade_vendida, valor_produto, data_venda, forma_pagamento, nome_vendedor) {
-
     document.getElementById("idatt").value = id
     document.getElementById("nomeprodutoatt").value = nome_produto
     document.getElementById("categoriaatt").value = categoria
     document.getElementById("qtdvendaatt").value = quantidade_vendida
     document.getElementById("precounitarioatt").value = valor_produto
-    document.getElementById("dataatt").value = data_venda
     document.getElementById("tipopagamentoatt").value = forma_pagamento
     document.getElementById("nomevendedoratt").value = nome_vendedor
+    document.getElementById("dataatt").value = new Date(data_venda).toISOString().split('T')[0]
 }
 
 formatt.addEventListener('submit', async (e) => {
@@ -82,16 +81,16 @@ formatt.addEventListener('submit', async (e) => {
     carregarProdutos()
 })
 
-async function carregarProdutos(){
+async function carregarProdutos() {
     const response = await fetch('http://localhost:8080/vendas')
     const vendas = await response.json()
 
     const tbody = document.getElementById('listaVendas')
-
     tbody.innerHTML = ""
 
     vendas.forEach(venda => {
         const tr = document.createElement('tr')
+        const dataFormatada = new Date(venda.data_venda).toLocaleDateString('pt-BR')
 
         tr.innerHTML = `
             <td>${venda.id}</td>
@@ -99,23 +98,32 @@ async function carregarProdutos(){
             <td>${venda.categoria}</td>
             <td>${venda.quantidade_vendida}</td>
             <td>${venda.valor_produto}</td>
-            <td>${venda.data_venda}</td>
+            <td>${dataFormatada}</td>
             <td>${venda.forma_pagamento}</td>
             <td>${venda.nome_vendedor}</td>
             <td>
-                <button onclick="deletarVenda(${venda.id})">Deletar</button>
-                <button onclick="atualizarUsuario(
-                    ${venda.id},
-                    '${venda.nome_produto}',
-                    '${venda.categoria}',
-                    '${venda.quantidade_vendida}',
-                    '${venda.valor_produto}',
-                    '${venda.data_venda}',
-                    '${venda.forma_pagamento}',
-                    '${venda.nome_vendedor}'
-                )">Atualizar</button>
+                <button class="btn-delete btn-deletar">Deletar</button>
+                <button class="btn-edit btn-atualizar">Atualizar</button>
             </td>
         `
+
+        tr.querySelector('.btn-deletar').addEventListener('click', () => {
+            deletarVenda(venda.id)
+        })
+
+        tr.querySelector('.btn-atualizar').addEventListener('click', () => {
+            atualizarUsuario(
+                venda.id,
+                venda.nome_produto,
+                venda.categoria,
+                venda.quantidade_vendida,
+                venda.valor_produto,
+                venda.data_venda,
+                venda.forma_pagamento,
+                venda.nome_vendedor
+            )
+        })
+
         tbody.appendChild(tr)
     })
 }
