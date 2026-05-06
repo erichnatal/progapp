@@ -1,9 +1,9 @@
 import express from 'express'
-import pedido from './pedido.js'
+import user from './user.js'
 
 
 export default function(app){
     app
     .use(express.json())
-    .use('/pedidos', pedido)        
-}   
+    .use('/user', user)        
+} 

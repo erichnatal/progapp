@@ -5,8 +5,9 @@ const app = express()
 
 const port = 8080
 
-
 initRoutes(app)
+
+app.use(express.json());
 
 app.get('/', (req, res) => {
     return res.send("A API está rodando")
