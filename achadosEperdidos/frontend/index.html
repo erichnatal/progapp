@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Achados e Perdidos</title>
+</head>
+<body>
+    <h1>Achados e Perdidos</h1>
+
+    <form id="formulario">
+        <input type="text" id="nome" placeholder="Nome do objeto">
+        <input type="text" id="descricao" placeholder="Descrição">
+        <input type="text" id="local" placeholder="Local achado">
+        <input type="date" id="data">
+        <input type="submit" id="btn-submit" value="Registrar">
+    </form>
+
+    <section id="secao-alertas">
+        <h2>Aguardando retirada há mais de 30 dias</h2>
+        <ul id="lista-alertas"></ul>
+    </section>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Local</th>
+                <th>Data</th>
+                <th>Status</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="table-data"></tbody>
+    </table>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
