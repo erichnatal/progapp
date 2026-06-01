@@ -3,7 +3,7 @@ import initRoutes from './src/routes/routes.js'
 import cors from 'cors'
 
 const app = express();
-const port = 8080;
+const port = 8000;
 
 app.use(cors({
     origin: '*'
@@ -18,5 +18,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log("O servidor está rodando em http://localhost:8080")
+    console.log("O servidor está rodando em http://localhost:8000")
 })
